@@ -7,7 +7,8 @@ body{
 header{
   background-color: #f2f2f2;
   text-align: center;
-  height: 15vh;
+  padding-bottom: 3vh;
+  height: 17vh;
 }
 
 header img{
@@ -58,7 +59,7 @@ input[type="text"].focus {
 
 .place-search{
   position: absolute;
-  top: 8vh;
+  top: 12vh;
   height: 1vh;
   right: 0;
 }
