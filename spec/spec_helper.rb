@@ -17,6 +17,11 @@
 require File.expand_path("../../application", __FILE__)
 
 ENV['RACK_ENV'] = 'test'
+require "rack/test"
+
+include Rack::Test::Methods
+
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -92,3 +97,23 @@ RSpec.configure do |config|
     FoodTruck.create_index!(force: true)
   end
 end
+
+def app
+  API::Root
+end
+
+def response_status
+  last_response.status
+end
+
+def parsed_response
+  JSON.parse(last_response.body)
+end
+
+# not optimized, to change when more time 
+#permits the elasticsearch indexes to be created 
+def wait_for_elasicsearch
+  sleep(2)
+end
+
+
