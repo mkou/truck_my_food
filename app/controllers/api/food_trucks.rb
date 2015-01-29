@@ -24,6 +24,5 @@ module API
         food_truck_search.to_a.map(&:to_hsh)
       end
     end
-    end
   end
 end

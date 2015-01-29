@@ -24,7 +24,6 @@ module API
         food_truck_search = FoodTruck.indexed_search(latitude: latitude, longitude: longitude, limit: 5)
         food_truck_search.to_a.map(&:food_types).flatten.uniq.map { |food_type| { key: food_type } } 
       end
-
     end
   end
 end
