@@ -38,7 +38,7 @@ describe FoodTruck do
   end
 
   describe '#indexed_search' do 
-    subject do 
+    subject do
       FoodTruck.indexed_search(opts)
     end
 
@@ -67,10 +67,17 @@ describe FoodTruck do
         location: [12.32390, 233.1345]
       })
     }
+
+    before(:each) do
+      # not optimized, to change when more time 
+      #permits the elasticsearch indexes to be created 
+      sleep(2)
+    end
     context 'when we search by location' do 
       let!(:opts) { { latitude: 12.32387, longitude: 233.1323} }
       it 'should render foodtrucks ordered by distance: the closest first' do
-        expect(subject.to_a.map(&:id)).to eq(['ft1','ft3', 'ft2']);
+        result_ids = subject.to_a.map(&:id)
+        expect(result_ids).to eq(['ft1','ft3', 'ft2']);
       end
     end
     context 'when we search by one food type' do 
@@ -80,9 +87,18 @@ describe FoodTruck do
       end
     end
     context 'when we search by several food types' do 
-      let(:opts) { { food_type: ['kiwi', 'strawberry']} }
+      let(:opts) { { food_types: ['kiwi', 'strawberry']} }
       it 'should render only the ones with the corect food types' do
-          expect(subject.to_a.map(&:id)).to eq(['ft2', 'ft3']);
+          subject_ids = subject.to_a.map(&:id)
+          expect(subject_ids).to include('ft2');
+          expect(subject_ids).to include('ft3');
+          expect(subject_ids).not_to include('ft1');
+      end
+    end
+    context 'when the search has no parameters' do 
+      let(:opts){{}}
+      it 'should render all food trucks' do
+        expect(subject.total).to equal(3);
       end
     end
   end

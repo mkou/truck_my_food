@@ -17,6 +17,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     bonsai-elasticsearch-rails (0.0.4)
     builder (3.2.2)
+    coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     crack (0.4.2)
@@ -66,10 +67,15 @@ GEM
     i18n (0.7.0)
     ice_nine (0.11.1)
     json (1.8.2)
+    method_source (0.8.2)
     minitest (5.5.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.0)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -94,6 +100,7 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     safe_yaml (1.0.4)
+    slop (3.5.0)
     thread_safe (0.3.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -114,6 +121,7 @@ DEPENDENCIES
   elasticsearch-persistence
   grape
   grape-swagger
+  pry
   rack
   rack-test
   racksh

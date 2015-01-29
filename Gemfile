@@ -20,6 +20,8 @@ end
 #console for Rack based ruby web applications.
 gem 'racksh'
 
+gem 'pry'
+
 
 
 group :test do
