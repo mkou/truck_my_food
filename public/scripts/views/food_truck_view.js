@@ -1,3 +1,8 @@
+//The FoofTruckView has two components:
+// - The list element on the left of the page
+// - The food trucks markers on the right of the page
+// It listens to the model it is attached to, if it changes, the view will be updated
+
 window.FoodTruckView = Backbone.View.extend({
   initialize: function(){
     this.model.on('change', this.render, this);

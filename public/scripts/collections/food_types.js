@@ -1,4 +1,10 @@
-window.FoodTypes = Backbone.Collection.extend({
+// The Food Types collection
+// The app has two food types collection. 
+//   - The first one is fetched once on the load page and contains ALL the food types available and is used to populate the autocomplete
+//   - The second one is the list of food types around a location. It's the list of the 5 closest trucks that might be present.
+// This last collection listens to the changes of latitude and longitude the search models to fetch the data from the serverwindow.
+
+FoodTypes = Backbone.Collection.extend({
   model: FoodTruck,
   url: function(){
     if (this.around) {

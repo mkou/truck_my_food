@@ -1,3 +1,5 @@
+// The Food Truck collection
+// Listens to any changes of the search models to fetch the data from the server
 window.FoodTrucks = Backbone.Collection.extend({
   model: FoodTruck,
   url: 'v1/food_trucks/search',

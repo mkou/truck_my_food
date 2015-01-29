@@ -1,3 +1,5 @@
+// The View of the collection of food trucks populates creates new food truck single views (marker + list)
+// It listens to any change on the collection to render the views
 window.FoodTrucksView = Backbone.View.extend({
   initialize: function(){
     this.listenTo(this.collection, "change reset add remove", this.render);

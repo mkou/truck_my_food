@@ -1,3 +1,5 @@
+// View of a single tag in the food type search
+//listens to the model it is attached to: renders the view when the model is changed
 window.FoodTypeView = Backbone.View.extend({
   template:  '{{food_type}} <span data-role="remove"></span>',
   tagName: 'span',

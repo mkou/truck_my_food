@@ -1,3 +1,6 @@
+// Prepares the autocomplete with the data from the collection
+// Updates the search when a food_type is selected
+// Adds the tags of the searched food_types
 window.FoodTypesView = Backbone.View.extend({
   initialize: function(){
     this.listenTo(this.collection, "change reset add remove", this.prepare_autocomplete, this);
@@ -13,6 +16,7 @@ window.FoodTypesView = Backbone.View.extend({
         afterSelect: function(food_type) {
           var new_food_types = _.clone(App.search.get('food_types'));
           new_food_types.push(food_type);
+          //Set the search
           App.search.set({food_types: new_food_types});
           current_view.addTag(food_type);
           $('#food-type-autocomplete').val('');
