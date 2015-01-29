@@ -4,7 +4,8 @@ use Rack::Static, :urls => [
     "/css",
     "/images",
     "/scripts",
-    "/bower_components"
+    "/bower_components",
+    "/api"
   ], :root => "public", index: 'index.html'
 
 map "/" do
