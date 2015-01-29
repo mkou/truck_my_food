@@ -81,7 +81,9 @@ _First time using it_ -
 ###Tradoffs
 I did not forget the tests on the views, it would be the first thing I do with more time. <br>
 Please don't look at it on a mobile phone.. With more time, I would have done a responsive interface and make spend more time on the design implementation.<br>
-The map does not check that the server responded with the foodtypes before displaying them..
+The map does not check that the server responded with the foodtypes before displaying them..<br>
+Minifying the JS.
+Collect other data to get the foodtrucks depending of their schedule
 
 ## To launch it in local
 1. Install Ruby (v 2.0+)
