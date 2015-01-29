@@ -51,7 +51,7 @@ Here, elasticsearch is a store and a cache. The data is updated every night.
 <br>
 **Heroku**<br>
 Hosted on Heroku with basic settings for convinience<br>
-**Heroku add-ons**
+**Heroku add-ons**<br>
 - Heroku scheduler - to schedule the store update
 - Bonsai Elasticsearch
 - Papertail - For logs
@@ -72,10 +72,10 @@ The search is the center of the application. The map right click, place autocomp
 #####Technologies used 
 **Backbone JS**<br>
 _First time using it_ -
-'Highly recommanded', plus I love trying new languages.
-**Mustache** - For easy templating
-**Bower** - Frontend dependency management
-**BootStrap 3 typeahead** - Perfect for simple autocomplete
+'Highly recommanded', plus I love trying new languages.<br>
+**Mustache** - For easy templating<br>
+**Bower** - Frontend dependency management<br>
+**BootStrap 3 typeahead** - Perfect for simple autocomplete<br>
 **Google maps and Google Places** 
 
 ###Tradoffs
