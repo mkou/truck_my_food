@@ -67,7 +67,7 @@ Models
 - FoodTruck Collection
 - FoodTypes Collection
 
-The search is the center of the application. The map right click, place autocomplete and food types autocomplete will change the search. The collections are watching search change to update themselves and the views are updating when the collection changes. 
+The search is the center of the application. The map 'right click', place autocomplete and food types autocomplete will change the search. The collections are watching search change to update themselves and the views are updating when the collection changes. 
 
 #####Technologies used 
 **Backbone JS**<br>
@@ -81,7 +81,6 @@ _First time using it_ -
 ###Tradoffs
 I did not forget the tests on the views, it would be the first thing I do with more time. <br>
 Please don't look at it on a mobile phone.. With more time, I would have done a responsive interface and make spend more time on the design implementation.<br>
-The map does not check that the server responded with the foodtypes before displaying them..<br>
 Minifying the JS.
 Collect other data to get the foodtrucks depending of their schedule
 
