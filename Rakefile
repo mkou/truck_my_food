@@ -7,3 +7,8 @@ task :update_store  do
   UpdateStore.execute
   puts "done."
 end
+
+desc 'Prepare the elasticsearch store'
+task :bootstrap  do
+  FoodTruck.create_index!
+end
