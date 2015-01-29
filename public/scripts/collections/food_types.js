@@ -24,6 +24,6 @@ FoodTypes = Backbone.Collection.extend({
   },
 
   reload: function() {
-    this.fetch( { data: App.search.attributes } )
+    this.fetch( { data: App.search.attributes, reset: true});
   }
 })

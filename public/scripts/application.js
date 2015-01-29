@@ -2,9 +2,6 @@
 window.App = new (Backbone.View.extend({
 
   initialize: function(){
-    //Initialize the map
-    FoodMap.initialize();
-
     //Initialize the search
     this.search = new Search({longitude: 37.772674, latitude: -122.444725, food_types: []});
 
@@ -16,9 +13,12 @@ window.App = new (Backbone.View.extend({
     this.foodTypesAround = new  FoodTypes({around: true, search: this.search});
     this.foodTypesAround.fetch({data: this.search.attributes});
 
+    //Initialize the map
+    this.mapView = new MapView(this.foodTypesAround);
+
     // Prepare FoodTrucks view
     this.foodTrucksView = new FoodTrucksView({collection: this.foodTrucks});
-    
+
     // Populate the autocomplete on food data
     this.foodTypes = new FoodTypes({});
     this.foodTypesView = new FoodTypesView({collection: this.foodTypes});  

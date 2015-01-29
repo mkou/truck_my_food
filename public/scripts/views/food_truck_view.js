@@ -29,9 +29,9 @@ window.FoodTruckView = Backbone.View.extend({
   addGeoMarker: function (){
     var image = 'images/food-truck.png';
     var position = new google.maps.LatLng(this.model.get('latitude'), this.model.get('longitude'));
-    this.marker = FoodMap.createMarker(position, this.model.get('title'),  image)
-    this.infowindow = FoodMap.createInfowindow(this.infowindowcontent(), this.marker)
-    FoodMap.markers.push(this.marker);
+    this.marker = App.mapView.createMarker(position, this.model.get('title'),  image)
+    this.infowindow = App.mapView.createInfowindow(this.infowindowcontent(), this.marker)
+    App.mapView.markers.push(this.marker);
   },
 
   openInfoWindow: function() {

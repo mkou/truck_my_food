@@ -1,5 +1,9 @@
-window.FoodMap = {
-  initialize: function() {
+// Handles all map and place autocomplete related events
+// creates Markers and view windows
+// Updates the search on right click
+// Listens to the changes of the food_types around to render the current position marker with the food types window
+window.MapView = Backbone.View.extend({
+  initialize: function(food_types_around) {
      this.options = {
       zoom: 13, 
       center: new google.maps.LatLng(37.772674, -122.444725)
@@ -8,6 +12,8 @@ window.FoodMap = {
     this.autocomplete_place();
     this.markers = [];
     google.maps.event.addListener(this.map, 'rightclick', this.updateFromRightClick.bind(this));
+
+    this.listenTo(food_types_around, 'reset', this.setCurrentPositionMarker, this);
   },
 
   autocomplete_place: function () {
@@ -35,7 +41,6 @@ window.FoodMap = {
 
     //Update the search
     App.search.set({latitude: latitude, longitude: longitude});
-    this.setCurrentPositionMarker();
   },
 
   setCurrentPositionMarker: function() {
@@ -93,4 +98,4 @@ window.FoodMap = {
     this.map.setZoom(15);
     this.map.setCenter(this.position);
   }
-}
+});

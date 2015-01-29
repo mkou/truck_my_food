@@ -12,13 +12,14 @@ window.FoodTrucksView = Backbone.View.extend({
   addAll: function(){
     this.$el.empty();
     this.deleteMarkers();
-    this.collection.forEach(this.addOne, this);
-  },
-  addOne: function(foodTruck){
-    var foodTruckView = new FoodTruckView({model: foodTruck});
-    this.$el.append(foodTruckView.render().el);
+    var container = document.createDocumentFragment();
+    this.collection.forEach(function(foodTruck) {
+      var foodTruckView = new FoodTruckView({model: foodTruck});
+      container.appendChild(foodTruckView.render().el);
+    }, this);
+    this.$el.append(container);
   },
   deleteMarkers: function(){
-    FoodMap.deleteMarkers();
+    App.mapView.deleteMarkers();
   }
 });
