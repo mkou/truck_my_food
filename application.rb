@@ -37,8 +37,8 @@ class API::Root < Grape::API
   mount API::FoodTrucks
   mount API::FoodTypes
 
-  add_swagger_documentation base_path: "/api",
+  add_swagger_documentation mount_path: "/api",
                             api_version: 'v1',
-                            hide_documentation_path: true
-end
+                            base_path: '/v1'
+  end
 

@@ -1,6 +1,3 @@
-require 'grape'
-require 'grape-swagger'
-
 module API
   class FoodTypes < Grape::API
     version 'v1' # path-based versioning by default

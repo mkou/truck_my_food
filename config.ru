@@ -5,7 +5,7 @@ use Rack::Static, :urls => [
     "/images",
     "/scripts",
     "/bower_components",
-    "/api"
+    "/api/docs"
   ], :root => "public", index: 'index.html'
 
 map "/" do
