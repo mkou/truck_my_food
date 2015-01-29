@@ -12,6 +12,10 @@ Dir["#{File.dirname(__FILE__)}/lib/*.rb"].each {|f| require f}
 
 env = (ENV['RACK_ENV'] || :development)
 
+#initialize Elasticsearch
+es_host = ENV['BONSAI_URL'] || 'http://localhost:9200' 
+Elasticsearch::Persistence.client = Elasticsearch::Client.new host: es_host, log: true
+
 class API::Root < Grape::API
   format :json
 

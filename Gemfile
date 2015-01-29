@@ -13,6 +13,10 @@ gem 'rake'
 # Here elasticsearch is used as a cache and datastore
 gem 'elasticsearch-persistence'
 
+group :production do 
+  gem 'bonsai-elasticsearch-rails'
+end
+
 #console for Rack based ruby web applications.
 gem 'racksh'
 
