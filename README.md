@@ -4,25 +4,36 @@
 Create a service that tells the user what types of food trucks might be found near a specific location on a map.
 The data is available on [DataSF](http://www.datasf.org/): [Food
 Trucks](https://data.sfgov.org/Permitting/Mobile-Food-Facility-Permit/rqzj-sfat)
+I have a full Time job, worked on it at night, chanllenge accepted
 
 ## Objective
 
 ## How I did it
 ### Backend
+### Architectural choices
+Un store elasticsearch et une api qui va communique avec le front
+au lieu de le résoudre au niveau applicatif on le fait au niveau elasticsearch
+- model va couche de transformation entre api remote et struct locale
+- transmet les données au client => légère
+-  un chrone qui met a jour le store
+On delegue a elasticsearch les recherches 
+-le fait d'avoir un backend => permet une plus grande extension et ouvre des possibilités de query pour faire des recherches plus complexes (monde) 
 #### Technologies and Libraries
 **Ruby**: <br>
 _2+ years of experience_ -
-No need for presnetation :)
+Language that I master. Very productive and readable language. Perfect for this test.
 <br>
 **Grape Framework**: <br>
 _First use_ -
 REST-like API micro-framework for Ruby. [See their GitHub](https://github.com/intridea/grape)<br/>
-Light and perfect for the job
+I have a read only API, with no authentication so grape is very light and one of the best solution. 
 <br>
 **Elasticsearch**<br>
 _1,5 years_  - 
 As the application does not need real time data, I decided to store the fetched data from DataSF to elasticsearch.
 In my app, elasticsearch is a store and a cache. The data is updated every night.
+It is a mean to have the same data as the SF data but to access it faster and in a structure that is optimised for the request I want. Elasticsearch has a 
+No persistence but no primary store
 <br>
 **Ruby Gems**
 - rack: Rack provides a minimal, modular and adaptable interface for developing web applications in Ruby
@@ -36,10 +47,49 @@ In my app, elasticsearch is a store and a cache. The data is updated every night
 - webmock : stubbing and setting expectations on HTTP requests in Ruby
 <br>
 **Heroku**<br>
-Hosted on Heroku with basic settings<br>
+Hosted on Heroku with basic settings for convinience<br>
 **Heroku add-ons**
 - Heroku scheduler - to schedule the store update
 - Bonsai Elasticsearch
 - Papertail - For logs
 
+### Front-End
+### Architecture
+Vue en full isolation 
+dans le dossier/public
+composants
+map avec autompletion et placement du marker
+gauche
+recherche par type de food
+liste des food trucks
+Models
+Recherche courant qui contient lat long et type de food
+Collection des des food trucks
+Collection des foodtypes associés
+
+Search est le centre de tout ca map et autocomplete changent la search, les collection surveillent la search pour s'updater et quand la collection est mise à jour la vue s'update. C'est du flux sauf que le search est un modèle
+Vues 
+=> découplage
+Resultat de la research fo
+
+#### 
+**Backbone JS**<br>
+First time, love it!
+Highly recommanded.
+**Mustache**
+For easy templating
+**Bower**
+Gestion des dépendances frontend
+**
+- typeahead
+- google maps
+- google places
+
+###Tradoffs
+-Map écoute les changements du mapping type 
+-Tests cotés clients of course
+-Champ schedule
+-site pas responsive, pas visible sur mobile
+
+## Resume
 
