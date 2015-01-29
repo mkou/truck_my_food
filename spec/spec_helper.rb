@@ -112,7 +112,7 @@ end
 
 # not optimized, to change when more time 
 #permits the elasticsearch indexes to be created 
-def wait_for_elasicsearch
+def wait_for_elasticsearch
   sleep(2)
 end
 

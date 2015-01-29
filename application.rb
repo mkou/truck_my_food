@@ -20,6 +20,20 @@ Elasticsearch::Persistence.client = Elasticsearch::Client.new host: es_host, log
 class API::Root < Grape::API
   format :json
 
+  helpers do
+
+    def validate_latitude_and_longitude
+      unless valid_float?(params[:latitude]) && valid_float?(params[:longitude])  
+        error!('latitude and longitude must be valid floats', 400) 
+      end
+    end
+
+    def valid_float?(float)
+      true if Float float rescue false
+    end
+
+  end
+
   mount API::FoodTrucks
   mount API::FoodTypes
 

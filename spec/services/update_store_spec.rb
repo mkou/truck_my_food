@@ -42,9 +42,9 @@ describe UpdateStore do
       instance = SfDataFetcher.instance
       instance.stub(:fetch) { fetched_data }
       SfDataFetcher.stub(:instance) { instance }
-      wait_for_elasicsearch
+      wait_for_elasticsearch
       UpdateStore.execute
-      wait_for_elasicsearch
+      wait_for_elasticsearch
     end
 
     it 'should remove the truck that is not sent anymore' do 

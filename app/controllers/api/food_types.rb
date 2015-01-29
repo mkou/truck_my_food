@@ -19,6 +19,7 @@ module API
         requires :longitude
       end
       get :around_location do 
+        validate_latitude_and_longitude
         latitude   = params[:latitude].to_f
         longitude  = params[:longitude].to_f
         food_truck_search = FoodTruck.indexed_search(latitude: latitude, longitude: longitude, limit: 5)
