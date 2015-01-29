@@ -88,8 +88,9 @@ Gestion des dépendances frontend
 ###Tradoffs
 -Map écoute les changements du mapping type 
 -Tests cotés clients of course
--Champ schedule
--site pas responsive, pas visible sur mobile
+- Champs schedule
+- Meilleur design
+-site pas responsive, pas visible sur mobile ..
 
 ## Resume
 
