@@ -1,0 +1,1 @@
+  FoodTruck.create_index!
