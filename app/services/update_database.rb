@@ -1,3 +1,6 @@
+# Update the elasticsearch indexes information with the data fetched from the SFdataFetcher library
+# This operation is scheduled once a day
+
 class UpdateDatabase 
 
   def self.execute
@@ -18,7 +21,7 @@ class UpdateDatabase
     food_truck.id = food_truck_data['objectid']
     food_truck.food_types = food_truck_data['fooditems'].gsub(': ', ':').split(':').map(&:downcase)
     food_truck.location = [food_truck_data['latitude'].to_f, food_truck_data['longitude'].to_f]
-    new_item ? food_truck.save : food_truck.update
+    food_truck.save
   end
 
   def self.delete_deprecated_food_trucks(food_trucks_data)

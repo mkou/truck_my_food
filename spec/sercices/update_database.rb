@@ -1,2 +1,0 @@
-describe UpdateDatabase do
-end
