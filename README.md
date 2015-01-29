@@ -4,21 +4,25 @@
 Create a service that tells the user what types of food trucks might be found near a specific location on a map.
 The data is available on [DataSF](http://www.datasf.org/): [Food
 Trucks](https://data.sfgov.org/Permitting/Mobile-Food-Facility-Permit/rqzj-sfat)
-I have a full Time job, worked on it at night, chanllenge accepted
+
+I have a full Time job, appointments at night .. challenge accepted!
 
 ## Objective
-
+<br>
+Take a look at the result here => [My awesome app](https://truck-my-food.herokuapp.com/)
 ## How I did it
-### Backend
+Originally, I am a Backend developper, my aim is to be a FullStack developper, this is my first try! 
+My app is composed of a Backend API in ruby with an elasticsearch store and an independant Front in BackboneJs.
 ### Architectural choices
-Un store elasticsearch et une api qui va communique avec le front
-au lieu de le résoudre au niveau applicatif on le fait au niveau elasticsearch
-- model va couche de transformation entre api remote et struct locale
-- transmet les données au client => légère
--  un chrone qui met a jour le store
-On delegue a elasticsearch les recherches 
--le fait d'avoir un backend => permet une plus grande extension et ouvre des possibilités de query pour faire des recherches plus complexes (monde) 
-#### Technologies and Libraries
+#### Backend
+Instead of resolving this problem at the applicative level, we do it around an ElasticSearch store with:
+- A daily task that updates the store
+- A model that is the the transformation layer between the SFData API and the front
+- An API that transmint data to the front
+
+We delegate the searches to elasticsearch in order to have way faster answers. The fact to have a backend permits to have a bigger extension and open possibilities of queries to make more complex researches.
+
+##### Technologies and Libraries
 **Ruby**: <br>
 _2+ years of experience_ -
 Language that I master. Very productive and readable language. Perfect for this test.
@@ -26,14 +30,13 @@ Language that I master. Very productive and readable language. Perfect for this 
 **Grape Framework**: <br>
 _First use_ -
 REST-like API micro-framework for Ruby. [See their GitHub](https://github.com/intridea/grape)<br/>
-I have a read only API, with no authentication so grape is very light and one of the best solution. 
+We have a read only API, with no authentication, grape is very light the best solution. 
 <br>
 **Elasticsearch**<br>
 _1,5 years_  - 
-As the application does not need real time data, I decided to store the fetched data from DataSF to elasticsearch.
-In my app, elasticsearch is a store and a cache. The data is updated every night.
-It is a mean to have the same data as the SF data but to access it faster and in a structure that is optimised for the request I want. Elasticsearch has a 
-No persistence but no primary store
+
+The elasticsearch store is a way to have the same data as the SF data but to access it faster and in a structure that is optimized for the request the application needs. Elasticsearch has a known issue of persistence but since this is not the primary store, it perfectly fits our needs.
+Here, elasticsearch is a store and a cache. The data is updated every night.
 <br>
 **Ruby Gems**
 - rack: Rack provides a minimal, modular and adaptable interface for developing web applications in Ruby
@@ -53,44 +56,48 @@ Hosted on Heroku with basic settings for convinience<br>
 - Bonsai Elasticsearch
 - Papertail - For logs
 
-### Front-End
-### Architecture
-Vue en full isolation 
-dans le dossier/public
-composants
-map avec autompletion et placement du marker
-gauche
-recherche par type de food
-liste des food trucks
+#### Front-End
+The view is in full isolation, you can find it in the 'public' folder.
+Components:
+- Map with place autocomplation, location on right click and marker placements
+- Type of food autocompletion research
+- FoodTruck list
 Models
-Recherche courant qui contient lat long et type de food
-Collection des des food trucks
-Collection des foodtypes associés
+- Current search than contains the latitude, longitude et types of food
+- FoodTruck Collection
+- FoodTypes Collection
 
-Search est le centre de tout ca map et autocomplete changent la search, les collection surveillent la search pour s'updater et quand la collection est mise à jour la vue s'update. C'est du flux sauf que le search est un modèle
-Vues 
-=> découplage
-Resultat de la research fo
+The search is the center of the application. The map right click, place autocomplete and food types autocomplete will change the search. The collections are watching search change to update themselves and the views are updating when the collection changes. 
 
-#### 
+#####Technologies used 
 **Backbone JS**<br>
-First time, love it!
-Highly recommanded.
-**Mustache**
-For easy templating
-**Bower**
-Gestion des dépendances frontend
-**
-- typeahead
-- google maps
-- google places
+_First time using it_ -
+'Highly recommanded', plus I love trying new languages.
+**Mustache** - For easy templating
+**Bower** - Frontend dependency management
+**BootStrap 3 typeahead** - Perfect for simple autocomplete
+**Google maps and Google Places** 
 
 ###Tradoffs
--Map écoute les changements du mapping type 
--Tests cotés clients of course
-- Champs schedule
-- Meilleur design
--site pas responsive, pas visible sur mobile ..
+I did not forget the tests on the views, it would be the first thing I do with more time. <br>
+Please don't look at it on a mobile phone.. With more time, I would have done a responsive interface and make spend more time on the design implementation.<br>
+The map does not check that the server responded with the foodtypes before displaying them..
 
-## Resume
+## To launch it in local
+1. Install Ruby (v 2.0+)
+2. Install Bundler
+3. Install Elasticsearch
+4. Launch your elasticsearch server
+5. Install dependencies
+```> bundle install ```
+6. Prepare the app
+```> rake bootstrap ```
+7. Load the store
+```> rake update_database```
 
+You can then launch your server 
+```> rackup```
+and see the result on your localhost:9292
+
+##My resume
+Check it out here ==> [My resume](http://mariekegueye.fr/)
