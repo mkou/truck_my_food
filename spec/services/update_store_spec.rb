@@ -42,9 +42,9 @@ describe UpdateStore do
       instance = SfDataFetcher.instance
       instance.stub(:fetch) { fetched_data }
       SfDataFetcher.stub(:instance) { instance }
-      sleep(2)#time for elasticsearch to create existing database
+      wait_for_elasicsearch
       UpdateStore.execute
-      sleep(2)#time for elasticsearch to create new database
+      wait_for_elasicsearch
     end
 
     it 'should remove the truck that is not sent anymore' do 

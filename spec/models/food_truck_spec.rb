@@ -69,9 +69,7 @@ describe FoodTruck do
     }
 
     before(:each) do
-      # not optimized, to change when more time 
-      #permits the elasticsearch indexes to be created 
-      sleep(2)
+      wait_for_elasicsearch
     end
     context 'when we search by location' do 
       let!(:opts) { { latitude: 12.32387, longitude: 233.1323} }
