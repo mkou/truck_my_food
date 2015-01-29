@@ -1,0 +1,22 @@
+{
+  "name": "food_trucks",
+  "version": "0.0.0",
+  "authors": [
+    "Marieke <marieke.gueye@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "~2.1.3",
+    "backbone": "~1.1.2",
+    "google-map": "GoogleWebComponents/google-map#~0.4.0",
+    "mustache": "~1.0.0",
+    "bootstrap3-typeahead": "git@github.com:bassjobsen/Bootstrap-3-Typeahead.git#master"
+  }
+}
