@@ -1,0 +1,1 @@
+window.FoodType = Backbone.Model.extend({});

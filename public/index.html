@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title> Food Trucks around </title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <header> 
+      <img src='images/logo.png'/>
+    </header>
+    <content>
+      <div class='place-search'>
+        Right-click on the map OR
+        <input id='place-autocomplete' class='controls' type='text' placeholder='Start typing a location in SF..'>
+      </div>
+      <div class='content'>
+        <div class='left-column'>
+          <div id='food-types'> 
+            <input id='food-type-autocomplete' class='controls' type='text' placeholder='You crave for...'>
+          </div>
+          <div class='food-truck-title'> The 10 closest Food Trucks possible locations</div>
+          <div id='food-trucks'></div>
+        </div>
+        <div class='right-column'>
+          <div id='gmaps-canvas' style='width: 100%; height: 100vh;'></div>
+        </div>
+      </div>
+    </content>
+    <script src='bower_components/jQuery/dist/jquery.js'></script>
+    <script src='bower_components/underscore/underscore.js'></script>
+    <script src='bower_components/mustache/mustache.js'></script>
+    <script src='bower_components/backbone/backbone.js'></script>
+    <script src='bower_components/bootstrap3-typeahead/bootstrap3-typeahead.js'></script>
+    <script src='scripts/food_map.js'></script>
+    <script src='scripts/models/food_truck.js'></script>
+    <script src='scripts/models/food_type.js'></script>
+    <script src='scripts/models/search.js'></script>
+    <script src='scripts/collections/food_trucks.js'></script>
+    <script src='scripts/collections/food_types.js'></script>
+    <script src='scripts/views/food_truck_view.js'></script>
+    <script src='scripts/views/food_type_view.js'></script>
+    <script src='scripts/views/food_trucks_view.js'></script>
+    <script src='scripts/views/food_types_view.js'></script>
+    <script src="scripts/application.js"></script>
+  </body>
+</html>

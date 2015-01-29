@@ -1,0 +1,1 @@
+window.FoodTruck = Backbone.Model.extend({});

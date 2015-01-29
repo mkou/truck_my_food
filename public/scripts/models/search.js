@@ -1,0 +1,1 @@
+window.Search = Backbone.Model.extend({});

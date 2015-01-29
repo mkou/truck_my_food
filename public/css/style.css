@@ -1,0 +1,159 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family:  'Open Sans', sans-serif;
+  color: #676767;
+}
+header{
+  background-color: #f2f2f2;
+  text-align: center;
+  height: 15vh;
+}
+
+header img{
+  height: 75%;
+  margin: 2vh;
+}
+input[type="text"] {
+  margin: 0 5px;
+  border-radius: 5%;
+  padding: 2vh;
+  border: solid 1vh #c9c9c9;
+  transition: border 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 1vh #c9c9c9;
+  border-radius: 5%;
+}
+
+.tag [data-role="remove"]:after {
+  content: "x";
+  padding: 0px 2px;
+}
+
+.tag {
+  padding: 4px 4px;
+  font-size: 12pt;
+  border-radius: 10%;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #2e008c;
+  margin: 2px;
+  display: inline-block;
+}
+.tag.mini {
+  font-size: 9pt;
+  font-weight: 'none';
+
+}
+
+#food-types{
+  padding-bottom: 8px;
+}
+
+.place-search{
+  position: absolute;
+  top: 8vh;
+  height: 1vh;
+  right: 0;
+}
+
+.left-column{
+  width: 20%;
+  float: left;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+.right-column{
+  width: 80%;
+  float: right;
+}
+
+/* TYPEAHEAD */
+.typeahead.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+.typeahead.dropdown-menu a {
+  color: #001f3f;
+  text-decoration: none;
+}
+.typeahead li  {
+  display: block;
+  padding: 3px 20px;
+  margin-bottom: 0px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+.typeahead li :hover,
+.typeahead li :focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #428bca;
+}
+.typeahead li.active {
+  color: #ffffff;
+  background-color: #428bca;
+}
+.food-truck-title{
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+  background: #a4a4a4;
+}
+.food-trucks {
+  padding: 5px;
+}
+.food-truck{
+  cursor: pointer;
+  vertical-align: middle;
+  padding-left: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+  color: #323232;
+  border: solid 2px #a4a4a4;
+  padding: 7px;
+  background-color: #fff;
+}
+.food-truck:hover{
+  color: #fff;
+  background-color: #676767;
+}
+.food-truck img{
+  width: 25px;
+}
+#food-type-autocomplete{
+  width: 80%;
+  margin-bottom: 10px;
+}
