@@ -2,7 +2,7 @@
 // It listens to any change on the collection to render the views
 window.FoodTrucksView = Backbone.View.extend({
   initialize: function(){
-    this.listenTo(this.collection, "change reset add remove", this.render);
+    this.listenTo(this.collection, "reset", this.render);
   },
   el: $("#food-trucks"),
   render: function(){

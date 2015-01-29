@@ -7,7 +7,7 @@ window.App = new (Backbone.View.extend({
 
     // Create and fetch the food trucks
     this.foodTrucks = new FoodTrucks(this.search);
-    this.foodTrucks.fetch({data: this.search.attributes});
+    this.foodTrucks.fetch({data: this.search.attributes, reset: true});
 
     // Create an fetch the food types around the search
     this.foodTypesAround = new  FoodTypes({around: true, search: this.search});
@@ -27,7 +27,7 @@ window.App = new (Backbone.View.extend({
   render: function(){
     $('#food-trucks').html(this.foodTrucksView.el);
     this.foodTrucksView.render();
-    this.foodTypes.fetch();
+    this.foodTypes.fetch({ reset: true });
   }
 }));
 

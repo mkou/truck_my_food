@@ -3,7 +3,7 @@
 // Adds the tags of the searched food_types
 window.FoodTypesView = Backbone.View.extend({
   initialize: function(){
-    this.listenTo(this.collection, "change reset add remove", this.prepare_autocomplete, this);
+    this.listenTo(this.collection, "reset", this.prepare_autocomplete, this);
     this.$typeaheadEl = $('#food-type-autocomplete');
   },
   el: $('#food-types'),

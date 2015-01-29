@@ -9,6 +9,6 @@ window.FoodTrucks = Backbone.Collection.extend({
     this.listenTo(search, 'change', this.reload, this);
   }, 
   reload: function(){
-    this.fetch({data: this.search.attributes});
+    this.fetch({data: this.search.attributes, reset: true});
   }
 })
