@@ -1,0 +1,1 @@
+Application.config.base_path = "https://food-trucks.herokuapp.com"
