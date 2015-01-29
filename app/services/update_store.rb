@@ -1,7 +1,7 @@
 # Update the elasticsearch indexes information with the data fetched from the SFdataFetcher library
 # This operation is scheduled once a day
 
-class UpdateDatabase 
+class UpdateStore 
 
   def self.execute
     food_trucks_data = ::SfDataFetcher.instance.fetch

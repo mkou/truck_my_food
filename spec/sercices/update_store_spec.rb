@@ -1,4 +1,4 @@
-describe UpdateDatabase do
+describe UpdateStore do
   describe 'exectute' do 
     # Creating existing database
     let!(:foodtruck1){
@@ -43,7 +43,7 @@ describe UpdateDatabase do
       instance.stub(:fetch) { fetched_data }
       SfDataFetcher.stub(:instance) { instance }
       sleep(2)#time for elasticsearch to create existing database
-      UpdateDatabase.execute
+      UpdateStore.execute
       sleep(2)#time for elasticsearch to create new database
     end
 

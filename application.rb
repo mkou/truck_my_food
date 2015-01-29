@@ -10,6 +10,7 @@ Dir["#{File.dirname(__FILE__)}/app/models/*.rb"].each {|f| require f}
 Dir["#{File.dirname(__FILE__)}/app/**/*.rb"].each {|f| require f}
 Dir["#{File.dirname(__FILE__)}/app/**/**/*.rb"].each {|f| require f}
 Dir["#{File.dirname(__FILE__)}/lib/*.rb"].each {|f| require f}
+Dir["#{File.dirname(__FILE__)}/lib/**/*.rb"].each {|f| require f}
 
 env = (ENV['RACK_ENV'] || :development)
 
