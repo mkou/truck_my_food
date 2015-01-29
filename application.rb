@@ -39,6 +39,7 @@ class API::Root < Grape::API
 
   add_swagger_documentation mount_path: "/api",
                             api_version: 'v1',
-                            base_path: '/v1'
+                            base_path: '/v1',
+                            hide_format: true
   end
 
