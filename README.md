@@ -1,5 +1,6 @@
 # Truck My Food! 
-
+## Objective
+<br>
 **Subject:**
 Create a service that tells the user what types of food trucks might be found near a specific location on a map.
 The data is available on [DataSF](http://www.datasf.org/): [Food
@@ -7,8 +8,6 @@ Trucks](https://data.sfgov.org/Permitting/Mobile-Food-Facility-Permit/rqzj-sfat)
 
 I have a full Time job, appointments at night .. challenge accepted!
 
-## Objective
-<br>
 Take a look at the result here => [My awesome app](https://truck-my-food.herokuapp.com/)
 ## How I did it
 Originally, I am a Backend developper, my aim is to be a FullStack developper, this is my first try! 
@@ -20,7 +19,9 @@ Instead of resolving this problem at the applicative level, we do it around an E
 - A model that is the the transformation layer between the SFData API and the front
 - An API that transmint data to the front
 
-We delegate the searches to elasticsearch in order to have way faster answers. The fact to have a backend permits to have a bigger extension and open possibilities of queries to make more complex researches.
+We delegate the searches to elasticsearch in order to have way faster answers. The fact to have a backend permits to have a bigger extension and open possibilities of queries to make more complex researches.<br>
+
+API documentation => [here](https://truck-my-food.herokuapp.com/api/docs/)
 
 ##### Technologies and Libraries
 **Ruby**: <br>
