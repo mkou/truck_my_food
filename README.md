@@ -8,7 +8,7 @@ Trucks](https://data.sfgov.org/Permitting/Mobile-Food-Facility-Permit/rqzj-sfat)
 
 I have a full Time job, appointments at night .. challenge accepted!
 
-Take a look at the result here => [My awesome app](https://truck-my-food.herokuapp.com/)
+Take a look at the result here => [My app](https://truck-my-food.herokuapp.com/)
 ## How I did it
 Originally, I am a Backend developper, my aim is to be a FullStack developper, this is my first try! 
 My app is composed of a Backend API in ruby with an elasticsearch store and an independant Front in BackboneJs.
