@@ -12,11 +12,10 @@ module API
 
       desc "Get food types around coordinates"
       params do 
-        requires :latitude
-        requires :longitude
+        requires :latitude, type: Float
+        requires :longitude, type: Float
       end
       get :around_location do 
-        validate_latitude_and_longitude
         latitude   = params[:latitude].to_f
         longitude  = params[:longitude].to_f
         food_truck_search = FoodTruck.indexed_search(latitude: latitude, longitude: longitude, limit: 5)

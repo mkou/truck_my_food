@@ -28,7 +28,7 @@ describe API::FoodTrucks do
         it "Raise bad request error" do
           get "/v1/food_trucks/search?latitude=banana&longitude=cornichon"
           expect(response_status).to eq 400
-          expect(parsed_response['error']).to eq 'latitude and longitude must be valid floats'
+          expect(parsed_response['error']).to eq "latitude is invalid, longitude is invalid"
         end
       end
     end

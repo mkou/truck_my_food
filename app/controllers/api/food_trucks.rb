@@ -6,15 +6,14 @@ module API
     resources :food_trucks do
       desc "Search foodtrucks around coordinates, by types .."
       params do 
-        requires :latitude
-        requires :longitude
-        optional :limit
-        optional :food_types
+        requires :latitude, type: Float
+        requires :longitude, type: Float
+        optional :limit, type: Integer, desc: 'number of Food Trucks rendered. Default is 10'
+        optional :food_types, type: Array
       end
 
       get :search do 
         limit      = params[:limit] 
-        validate_latitude_and_longitude
         latitude   = params[:latitude].to_f
         longitude  = params[:longitude].to_f
         food_types = Array(params[:food_types])
